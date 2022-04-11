@@ -58,3 +58,50 @@ function addNumber(x, y) {
     return x + y;
 }
 console.log(addNumber(52.365, 56));
+// Void
+function log(message) {
+    console.log(message);
+}
+log(26);
+log('This is TypeScript');
+const user2 = {
+    id: 1,
+    name: 'Roky',
+};
+console.log(user2);
+const add = (x, y) => x + y;
+console.log(add(2, 6));
+const sub = (x, y) => x - y;
+console.log(sub(2, 6));
+// Super Class
+class Person {
+    constructor(id, name) {
+        this.id = id;
+        this.name = name;
+    }
+    get() {
+        return `My ID : ${this.id} And My Name is ${this.name} `;
+    }
+}
+const Roky = new Person(123, 'Roky');
+console.log(Roky.get());
+// Subclass
+class Employee extends Person {
+    constructor(id, name, position) {
+        super(id, name);
+        this.position = position;
+    }
+}
+const Abir = new Employee(123, 'Abir', 'Engineer');
+console.log(Abir.get());
+console.log(Abir.position);
+// Generics
+function getArray(items) {
+    return new Array().concat(items);
+}
+let numArray = getArray([1, 2, 3, 4, 5]);
+let strArray = getArray(['roky', 'Abir', 'Atik']);
+numArray.push(6);
+//srtArray.push(6);
+console.log(numArray);
+console.log(strArray);
