@@ -201,3 +201,112 @@ const todocompleted = toDos.filter(function (todo) {
     return todo.text;
 });
 console.log(todocompleted);
+
+
+// Codisiontal 
+
+const a = 10;
+
+if (a === 10 || a < 10) {
+    console.log('a is 10');
+} else if (a > 10) {
+    console.log('a is greater then 10');
+} else {
+    console.log('a is not 10');
+}
+
+const color = a > 10 ? 'red' : 'black'; // ? is ternary operator of the condisiontal exp
+console.log(color);
+
+
+// Swicth case
+switch (color) {
+    case 'red':
+        console.log('Red');
+        break;
+    case 'blue':
+        console.log('Blue');
+        break;
+    case 'black':
+        console.log('Black');
+        break;
+    default:
+        console.log('Color not match');
+        break;
+
+}
+
+// function
+
+function addNum(num1, num2) {
+    console.log(num1 + num2);
+}
+
+addNum();
+addNum(2, 3);
+
+function addNums(num1, num2) {
+    return num1 + num2;
+}
+
+console.log(addNums());
+console.log(addNums(25.36, 36));
+console.log(addNums('25.36 ', 36));
+
+
+// => sgin use ES6
+const addNumer = (num1, num2) => console.log(num1 + num2);
+addNumer(25.36, 3);
+
+
+// OOP ES5
+
+// Constructor Funtion
+function Person(fName, lName, dobPerson) {
+    this.fName = fName;
+    this.lName = lName;
+    this.dobPerson = new Date(dobPerson);
+    this.getDOByear = function () {
+        return this.dobPerson.getFullYear();
+    };
+    Person.prototype.getfullName = function () {
+        return `${this.fName} ${this.lName}`;
+    };
+}
+
+// Intantiate Object
+const person1 = new Person('Roky', 'islam', '04-16-1996');
+const person2 = new Person('Abir', 'Rahman', '11-28-1995');
+
+console.log(person1);
+console.log(person2.dobPerson);
+console.log(person2.getDOByear());
+console.log(person2.getfullName());
+
+
+// OOP ES6
+class PersonClass {
+    constructor(fName, lName, dobPerson) {
+        this.fName = fName;
+        this.lName = lName;
+        this.dobPerson = new Date(dobPerson);
+    }
+    getDOByear() {
+        return this.dobPerson.getFullYear();
+    };
+
+    getfullName() {
+        return `${this.fName} ${this.lName}`;
+    };
+}
+
+// Intantiate Object
+const person1Obj = new PersonClass('Roky', 'islam', '04-16-1996');
+const person2Obj = new PersonClass('Abir', 'Rahman', '11-28-1995');
+
+console.log(person1Obj);
+console.log(person2Obj.dobPerson);
+console.log(person2Obj.getDOByear());
+console.log(person2Obj.getfullName());
+
+
